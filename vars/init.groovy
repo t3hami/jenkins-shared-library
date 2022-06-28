@@ -1,24 +1,36 @@
 def call(body) {
     node {
+
         try {
-            // list of steps to run
             def appConfig = readYaml text: libraryResource("config.yaml")
             appConfig = appConfig["jobs"][env.JOB_NAME]
-            println appConfig
+
+            // list of stages to run
             // gitCheckout()
             if (appConfig.build) {
                 if (appConfig.BUILD_TYPE == "maven") {
                     mavenBuild()
                 }
+                else if (appConfig.BUILD_TYPE == "npm") {
+                    npmBuild()
+                }
             }
-        } catch (e) {
+            if (appConfig.artifact_upload) uploadArtifact()
+            if (appConfig.docker_build_and_push) dockerBuildAndPush()
+            if (appConfig.deploy) deploy()
+        }
+        
+        
+        catch (e) {
             if (e instanceof InterruptedException) {
                 currentBuild.result = "ABORTED"
             } else {
                 currentBuild.result = "FAILED"
             }
             throw e
-        } finally {
+        }
+        
+        finally {
             if (currentBuild.currentResult == 'SUCCESS') {
                 // do something as post step
             }

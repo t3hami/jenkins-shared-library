@@ -2,6 +2,11 @@ import com.nisum.devops.Sample
 
 
 def call(body) {
-    def sampleObj = new Sample(1, 2)
+    def config = [:]
+    body.resolveStrategy = Closure.DELEGATE_FIRST
+    body.delegate = config
+    body()
+
+    def sampleObj = new Sample(config.x, config.y)
     println sampleObj
 }

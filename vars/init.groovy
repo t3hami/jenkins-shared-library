@@ -5,7 +5,7 @@ def call(body) {
             def appConfig = readYaml text: libraryResource("config.yaml")
             appConfig = appConfig["jobs"][env.JOB_NAME]
             println appConfig
-            gitCheckout()
+            // gitCheckout()
             if (appConfig.build) {
                 if (appConfig.BUILD_TYPE == "maven") {
                     mavenBuild()

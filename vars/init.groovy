@@ -8,10 +8,10 @@ def call(body) {
             // list of stages to run
             // gitCheckout()
             if (appConfig.build) {
-                if (appConfig.BUILD_TYPE == "maven") {
+                if (appConfig.build_type == "maven") {
                     mavenBuild()
                 }
-                else if (appConfig.BUILD_TYPE == "npm") {
+                else if (appConfig.build_type == "npm") {
                     npmBuild()
                 }
             }

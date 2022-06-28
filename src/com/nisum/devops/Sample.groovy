@@ -9,6 +9,7 @@ public class Sample {
         this.y = y;
     }
 
+    // Continuation Passing Style (CPS)
     @NonCPS
     public String toString() {
         return "Sample{" + "x=" + x + ", y=" + y + '}';

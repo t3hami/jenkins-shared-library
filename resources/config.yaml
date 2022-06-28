@@ -1,8 +1,5 @@
 jobs:
   jenkins-shared-library-example-pipeline:
-    HELM_CHART_NAME: jenkins-shared-library-example-pipeline
-    HELM_RELEASE_NAME: jenkins-shared-library-example-pipeline
-    IMAGE_NAME: jenkins-shared-library-example-pipeline
     build: true
     deploy: false
     artifact_upload: true
@@ -10,9 +7,6 @@ jobs:
     BUILD_TYPE: maven
     sample_step: true
   jenkins-shared-library-example-pipeline-nodejs:
-    HELM_CHART_NAME: jenkins-shared-library-example-pipeline-nodejs
-    HELM_RELEASE_NAME: jenkins-shared-library-example-pipeline-nodejs
-    IMAGE_NAME: jenkins-shared-library-example-pipeline-nodejs
     build: true
     deploy: true
     artifact_upload: true

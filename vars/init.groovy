@@ -25,15 +25,17 @@ def call(body) {
         catch (e) {
             if (e instanceof InterruptedException) {
                 currentBuild.result = "ABORTED"
+                // do something as post step on interruption
             } else {
                 currentBuild.result = "FAILED"
+                // do something as post step on failure
             }
             throw e
         }
         
         finally {
             if (currentBuild.currentResult == 'SUCCESS') {
-                // do something as post step
+                // do something as post step on success
             }
         }
     }

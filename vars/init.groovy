@@ -2,13 +2,15 @@ def call(body) {
     node {
         try {
             // list of steps to run
-            appConfig = readYaml text: libraryResource("config.yaml")["jobs"][env.JOB_NAME]
+            appConfig = readYaml text: libraryResource("config.yaml")
+            // ["jobs"][env.JOB_NAME]
+            println appConfig
             //gitCheckout()
-            if (appConfig.build) {
-                if (appConfig.BUILD_TYPE == "maven") {
-                    mavenBuild()
-                }
-            }
+            // if (appConfig.build) {
+            //     if (appConfig.BUILD_TYPE == "maven") {
+            //         mavenBuild()
+            //     }
+            // }
             mavenBuild()
         } catch (e) {
             if (e instanceof InterruptedException) {

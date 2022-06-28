@@ -8,6 +8,7 @@ jobs:
     artifact_upload: true
     docker_build_and_push: false
     BUILD_TYPE: maven
+    sample_step: true
   jenkins-shared-library-example-pipeline-nodejs:
     HELM_CHART_NAME: jenkins-shared-library-example-pipeline-nodejs
     HELM_RELEASE_NAME: jenkins-shared-library-example-pipeline-nodejs
@@ -17,3 +18,4 @@ jobs:
     artifact_upload: true
     docker_build_and_push: true
     BUILD_TYPE: npm
+    sample_step: true

@@ -18,7 +18,7 @@ def call(body) {
             if (appConfig.artifact_upload) uploadArtifact()
             if (appConfig.docker_build_and_push) dockerBuildAndPush()
             if (appConfig.deploy) deploy()
-            if (appConfig.sample_step) sample()
+            if (appConfig.sample_step) sample { x = 1, y = 2 }
         }
         
         

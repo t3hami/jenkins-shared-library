@@ -1,0 +1,11 @@
+jobs:
+  jenkins-shared-library-example-pipeline:
+    BUILD_DIRECTORY: example
+    HELM_CHART_NAME: example
+    HELM_RELEASE_NAME: example
+    IMAGE_NAME: example-image
+    build: true
+    deploy: true
+    artifact_upload: true
+    docker_build_and_push: true
+    BUILD_TYPE: maven

@@ -1,3 +1,5 @@
+package com.nisum.devops
+
 public class Sample {
     private int x;
     private int y;

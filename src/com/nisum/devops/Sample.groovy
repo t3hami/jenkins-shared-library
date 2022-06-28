@@ -9,7 +9,6 @@ public class Sample {
         this.y = y;
     }
 
-    @Override
     public String toString() {
         return "Sample{" + "x=" + x + ", y=" + y + '}';
     }

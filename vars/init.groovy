@@ -2,7 +2,7 @@ def call(body) {
     node {
         try {
             // list of steps to run
-            appConfig = readYaml text: libraryResource("config.yaml")[env.JOB_NAME]
+            appConfig = readYaml text: libraryResource("config.yaml")["jobs"][env.JOB_NAME]
             //gitCheckout()
             if (appConfig.build) {
                 if (appConfig.BUILD_TYPE == "maven") {

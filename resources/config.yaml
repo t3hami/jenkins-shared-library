@@ -1,15 +1,15 @@
 jobs:
   jenkins-shared-library-example-pipeline:
     build: true
+    build_type: maven
     deploy: false
     artifact_upload: true
     docker_build_and_push: false
-    build_type: maven
     sample_step: true
   jenkins-shared-library-example-pipeline-nodejs:
     build: true
+    build_type: npm
     deploy: true
     artifact_upload: true
     docker_build_and_push: true
-    build_type: npm
     sample_step: true
